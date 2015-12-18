@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Meetme</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="registro">Registro</string>
+    <string name="changepass">Cambiar Contraseña</string>
+    <string name="login">Iniciar Sesión</string>
+    <string name="main">Principal</string>
+    <string name="resetpass">Reiniciar Contraseña</string>
+
+
+</resources>

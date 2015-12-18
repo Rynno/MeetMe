@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.learn2crack"
+    android:versionCode="1"
+    android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="9"
+        android:targetSdkVersion="17"/>
+    <application
+        android:label="@string/app_name"
+        android:icon="@drawable/ic_launcher"
+        android:theme="@style/AppTheme" >
+
+        <activity android:name="ec.com.rhinosystem.Meetme.Login"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="ec.com.rhinosystem.Meetme.Register"
+            android:label="@string/registro">
+
+        </activity>
+
+        <activity android:name="ec.com.rhinosystem.Meetme.Registered"
+            android:label="@string/registro">
+
+        </activity>
+
+
+        <activity android:name="ec.com.rhinosystem.Meetme.Main"
+            android:label="@string/main">
+
+        </activity>
+
+        <activity android:name="ec.com.rhinosystem.Meetme.PasswordReset"
+            android:label="@string/resetpass">
+
+        </activity>
+        <activity android:name="ec.com.rhinosystem.Meetme.ChangePassword"
+            android:label="@string/changepass">
+
+        </activity>
+
+    </application>
+    <!-- Allow to connect with internet and to know the current network state-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
+</manifest>
