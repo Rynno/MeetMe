@@ -1,11 +1,13 @@
-package ec.com.rhinosystem.Meetme;
+package ec.com.rhinosystem.Meetme.Principales;
 
 /**
  * Author :Ronny
  **/
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -129,7 +131,8 @@ private static String KEY_ERROR = "error";
                         }
                         else{
                             nDialog.dismiss();
-                            alert.setText("Error in Network Connection");
+                            showAlert("Error conección de Red");
+                            //alert.setText("Error in Network Connection");
                         }
                     }
                 }
@@ -169,6 +172,9 @@ private static String KEY_ERROR = "error";
                     }
 
 
+
+
+
                     @Override
                     protected void onPostExecute(JSONObject json) {
                   /**
@@ -179,22 +185,20 @@ private static String KEY_ERROR = "error";
                                 alert.setText("");
                                 String res = json.getString(KEY_SUCCESS);
                                 String red = json.getString(KEY_ERROR);
-
-
                                 if(Integer.parseInt(res) == 1){
                                    pDialog.dismiss();
-                                    alert.setText("Se te envió un recovery email, revísalo para más detalles.");
-
-
-
+                                    showAlert("Se te envió un recovery email, revísalo para más detalles.");
+                                    //alert.setText("Se te envió un recovery email, revísalo para más detalles.");
                                 }
                                 else if (Integer.parseInt(red) == 2)
                                 {    pDialog.dismiss();
-                                    alert.setText("Your email does not exist in our database.");
+                                    showAlert("Tu email no existe en nuestra Base de datos.");
+                                    //alert.setText("Tu email no existe en nuestra Base de datos.");
                                 }
                                 else {
                                     pDialog.dismiss();
-                                    alert.setText("Error occured in changing Password");
+                                    showAlert("Error ocurrió al cambiar el Password.");
+                                    //alert.setText("Error ocurrió al cambiar el Password");
                                 }
 
 
@@ -209,7 +213,33 @@ private static String KEY_ERROR = "error";
                     }}
             public void NetAsync(View view){
                 new NetCheck().execute();
-            }}
+            }
+
+
+    private void showAlert(String message)
+    {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setTitle("Nota:");
+        // set dialog message
+        alertDialogBuilder
+                .setMessage(message)
+                .setCancelable(false)
+                .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                });
+        // create alert dialog
+        AlertDialog alertDg = alertDialogBuilder.create();
+        // muestra
+        alertDg.show();
+    }
+
+
+
+}
+
+
 
 
 

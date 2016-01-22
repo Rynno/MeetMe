@@ -1,4 +1,4 @@
-package ec.com.rhinosystem.Meetme;
+package ec.com.rhinosystem.Meetme.Principales;
 
 /**
  * Author :Ronny
@@ -61,7 +61,7 @@ public class ChangePassword extends Activity {
         cancel.setOnClickListener(new View.OnClickListener(){
         public void onClick(View arg0){
 
-                Intent login = new Intent(getApplicationContext(), Main.class);
+                Intent login = new Intent(getApplicationContext(), ec.com.rhinosystem.Meetme.Main.class);
 
                 startActivity(login);
                 finish();

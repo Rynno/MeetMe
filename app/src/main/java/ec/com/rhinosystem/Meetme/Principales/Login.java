@@ -1,11 +1,13 @@
-package ec.com.rhinosystem.Meetme;
+package ec.com.rhinosystem.Meetme.Principales;
 
 /**
- * Author :Ronny
+ * Author :Ronny Morán
  **/
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -20,6 +22,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.learn2crack.R;
+
 import ec.com.rhinosystem.Meetme.Controller.DatabaseHandler;
 import ec.com.rhinosystem.Meetme.Controller.UserFunctions;
 
@@ -27,12 +30,14 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
 
 public class Login extends Activity {
 
     Button btnLogin;
-    Button Btnregister;
-    Button passreset;
+    TextView Btnregister;
+
+    TextView passreset;
     EditText inputEmail;
     EditText inputPassword;
     private TextView loginErrorMsg;
@@ -56,10 +61,22 @@ public class Login extends Activity {
 
         inputEmail = (EditText) findViewById(R.id.email);
         inputPassword = (EditText) findViewById(R.id.pword);
-        Btnregister = (Button) findViewById(R.id.registerbtn);
+        Btnregister = (TextView) findViewById(R.id.registerbtn);
         btnLogin = (Button) findViewById(R.id.login);
-        passreset = (Button)findViewById(R.id.passres);
+        passreset = (TextView)findViewById(R.id.passres);
         loginErrorMsg = (TextView) findViewById(R.id.loginErrorMsg);
+
+
+        DatabaseHandler db = new DatabaseHandler(getApplication());
+        HashMap<String,String> user = new HashMap<String, String>();
+        user = db.getUserDetails();
+        if(user.get("fname")!=null){
+            Intent main = new Intent(getApplicationContext(), ec.com.rhinosystem.Meetme.Principales.Main.class);
+            main.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(main);
+            finish();
+        }
+
 
         passreset.setOnClickListener(new View.OnClickListener() {
         public void onClick(View view) {
@@ -162,7 +179,8 @@ public class Login extends Activity {
             }
             else{
                 nDialog.dismiss();
-                loginErrorMsg.setText("Error in Network Connection");
+                showAlert("Error conección de Red");
+                //loginErrorMsg.setText("Error conección de Red");
             }
         }
     }
@@ -224,10 +242,10 @@ public class Login extends Activity {
                        /**
                         *If JSON array details are stored in SQlite it launches the User Panel.
                         **/
-                        Intent upanel = new Intent(getApplicationContext(), Main.class);
-                        upanel.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        Intent main = new Intent(getApplicationContext(), ec.com.rhinosystem.Meetme.Principales.Main.class);
+                        main.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         pDialog.dismiss();
-                        startActivity(upanel);
+                        startActivity(main);
                         /**
                          * Close Login Screen
                          **/
@@ -235,7 +253,9 @@ public class Login extends Activity {
                     }else{
 
                         pDialog.dismiss();
-                        loginErrorMsg.setText("Email o Contraseña Incorrecto");
+                        showAlert("Email o Contraseña Incorrecto");
+
+                        //loginErrorMsg.setText("Email o Contraseña Incorrecto");
                     }
                 }
             } catch (JSONException e) {
@@ -248,4 +268,25 @@ public class Login extends Activity {
     public void NetAsync(View view){
         new NetCheck().execute();
     }
+
+
+    private void showAlert(String message)
+    {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setTitle("Nota:");
+        // set dialog message
+        alertDialogBuilder
+                .setMessage(message)
+                .setCancelable(false)
+                .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                });
+        // create alert dialog
+        AlertDialog alertDg = alertDialogBuilder.create();
+        // muestra
+        alertDg.show();
+    }
+
 }
