@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashScreenActivity" >
+<!--
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="165dip"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY"
+        android:src="@drawable/fondo1"
+        android:id="@+id/imageView"/>
+
+    <com.rhinosystem.ronny.adapter.RoundedImageView
+        android:id="@+id/imageProfile"
+        android:layout_marginTop="7dip"
+        android:src="@drawable/perfil"
+        android:layout_width="110dip"
+        android:layout_height="110dip"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="img"
+        />
+
+
+
+
+
+    <TextView
+        android:id="@+id/ColImgID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="NOMBRE"
+        android:gravity="center"
+        android:textColor="#040404"
+        android:typeface="sans"
+        android:textSize="15dip"
+        android:textStyle="bold"
+        android:layout_below="@+id/imageProfile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="6dp" />
+
+
+    <TextView
+        android:id="@+id/ColImgDesc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ColImgID"
+        android:textColor="#343434"
+        android:textSize="10dip"
+        android:layout_marginTop="3dip"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="CORREO" />
+
+
+    -->
+
+</RelativeLayout>

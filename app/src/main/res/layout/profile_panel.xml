@@ -1,0 +1,155 @@
+<!-- in a real application you should use styles and dimens... -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:id="@+id/header_imageview"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/backgroud_gray"
+        android:adjustViewBounds="true"
+        />
+
+    <LinearLayout
+        android:id="@+id/informations_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/header_imageview"
+        android:gravity="center"
+        android:paddingTop="32dp"
+        android:paddingBottom="10dp">
+
+
+        <TextView
+            android:id="@+id/nombreusuario"
+            android:layout_width="193dp"
+            android:layout_height="wrap_content"
+            android:text="Nombres"
+            android:textColor="#610000"
+            android:textStyle="bold"
+            android:textSize="17dp"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/usuario"
+            android:layout_width="138dp"
+            android:layout_height="wrap_content"
+            android:text="Usuario"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:textColor="#FF707070"/>
+
+        <TextView
+            android:id="@+id/correousuario"
+            android:layout_width="223dp"
+            android:layout_height="wrap_content"
+            android:text="Correo"
+            android:layout_marginTop="8dp"
+            android:textColor="#FF909090"
+            android:gravity="center" />
+
+
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="255dp"
+        android:background="@android:color/black"
+        android:id="@+id/view" />
+
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_below="@+id/informations_container"
+        android:background="#FFF0F0F0">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Here are the tabs, Just TextViews with a selector and a clickListener... -->
+            <!-- There is also two views at each edge with a gradient drawable making the fade effect. But I find this pretty ugly. -->
+
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+
+    <!-- cheat code: negative margin -->
+    <ec.com.rhinosystem.Meetme.adapter.RoundedImageView
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:src="@drawable/ronnymoran"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/informations_container"
+        android:layout_marginBottom="-16dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="193dp"
+        android:layout_height="wrap_content"
+        android:text="Nombre completo:"
+        android:textColor="#610000"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/view"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="25dp" />
+
+    <TextView
+        android:id="@+id/ncompleto"
+        android:layout_width="193dp"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/correoperfil"
+        android:layout_width="193dp"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="193dp"
+        android:layout_height="wrap_content"
+        android:text="Correo:                     "
+        android:textColor="#610000"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/textView"
+        android:layout_toLeftOf="@+id/textView3"
+        android:layout_marginTop="20dp"
+        />
+
+</RelativeLayout>

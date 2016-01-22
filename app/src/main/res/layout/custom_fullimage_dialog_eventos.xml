@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="10dip"
+        android:orientation="vertical"
+        android:id="@+id/layout_root">
+
+
+
+        <ImageView
+            android:id="@+id/fullimage"
+            android:layout_width="match_parent"
+            android:layout_height="261dp"
+            />
+        <TextView
+            android:id="@+id/txt_detalle_evento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/txt_establecimiento_evento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/txt_direccion_evento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/txt_ciudad_evento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/txt_fecha_inicio_evento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -123,8 +123,8 @@
             android:layout_alignLeft="@+id/uname"
             android:layout_below="@+id/textView5"
             android:textSize="15dp"
-        android:layout_alignRight="@+id/bktologin"
-        android:layout_alignEnd="@+id/bktologin" />
+        android:layout_alignRight="@+id/uname"
+        android:layout_alignEnd="@+id/uname" />
 
     <TextView
             android:layout_width="125dp"
@@ -137,32 +137,42 @@
             android:layout_alignRight="@+id/textView5"
             android:textSize="15dp"/>
 
-    <Button
 
-            android:background="@drawable/btn_blue"
-            style="@style/ButtonText"
-            android:layout_width="170dp"
-            android:layout_height="40dp"
-
-            android:text="Registrar"
-            android:id="@+id/register"
-            android:layout_below="@+id/textView6"
-            android:layout_alignParentLeft="true"
-            android:textSize="13dp"
-            />
 
     <Button
+        android:id="@+id/register"
+        android:layout_width="153dp"
+        android:layout_height="wrap_content"
+        android:text="Registrar"
+        android:textSize="22sp"
+        android:typeface="serif"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:layout_below ="@+id/textView6"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="#ffffffff"
+        android:background="#ff3d7bdb"
+        android:layout_gravity="center_horizontal">
+    </Button>
+    <Button
+        android:id="@+id/bktologin"
+        android:layout_width="153dp"
+        android:layout_height="wrap_content"
+        android:text="Ir a Login"
+        android:textSize="22sp"
+        android:typeface="serif"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:layout_below ="@+id/register"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="#ffffffff"
+        android:background="#ff3d7bdb"
+        android:layout_gravity="center_horizontal">
+    </Button>
 
-            android:background="@drawable/btn_blue"
-            style="@style/ButtonText"
-            android:layout_width="175dp"
-            android:layout_height="40dp"
 
-            android:text="Ir a Login"
-            android:id="@+id/bktologin"
-            android:layout_below="@+id/pword"
-            android:layout_alignParentRight="true"
-            android:textSize="13dp"/>
 
     <TextView
             android:layout_width="fill_parent"

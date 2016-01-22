@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="0.30"
+            android:orientation="horizontal" >
+            <ImageButton
+                android:id="@+id/iBtnMapa"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.50"
+                android:src="@android:drawable/btn_radio"
+              />
+            <ImageButton
+                android:id="@+id/iBtnFoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.50"
+
+                android:src="@android:drawable/btn_star" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="0.35"
+            android:orientation="vertical"
+             >
+            <TextView
+                android:id="@+id/txtUltPub"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.80"
+                android:textSize="20sp"
+                android:text="Ultimas Publicaciones" />
+            <HorizontalScrollView
+                android:id="@+id/scrollUltPub"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.20" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="0.35"
+            android:orientation="vertical" >
+            <TextView
+                android:id="@+id/txtMasPub"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.80"
+                android:textSize="20sp"
+                android:text="Más Visitados" />
+            <HorizontalScrollView
+                android:id="@+id/scrollMasPub"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.20" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

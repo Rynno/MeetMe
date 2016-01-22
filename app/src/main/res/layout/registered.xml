@@ -156,17 +156,23 @@
         android:gravity="center"
         android:layout_toRightOf="@+id/textView9" />
 
-    <Button
-            android:background="@drawable/btn_blue"
-            style="@style/ButtonText"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="Ir a Login"
-            android:id="@+id/login"
 
-            android:layout_below="@+id/textView11"
-            android:textSize="13dp"
-            android:layout_alignRight="@+id/lname"
-            android:layout_alignParentLeft="true"/>
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="153dp"
+        android:layout_height="wrap_content"
+        android:text="Ir a Login"
+        android:textSize="22sp"
+        android:typeface="serif"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:layout_below ="@+id/textView11"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="#ffffffff"
+        android:background="#ff3d7bdb"
+        android:layout_gravity="center_horizontal">
+    </Button>
 
 </RelativeLayout>
