@@ -3,7 +3,6 @@ package ec.com.rhinosystem.Meetme.Controller;
 /**
  * Created by Ronny on 18/07/2015.
  */
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
